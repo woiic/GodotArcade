@@ -1,0 +1,1 @@
+Cuatro en línea es un emocionante juego de estrategia para dos. Cada jugador intenta alinear cuatro fichas de su color en una cuadrícula de siete columnas y seis filas. Turno a turno, dejan caer fichas en las columnas, y el primero en formar una línea de cuatro en cualquier dirección gana. ¡Planifica, bloquea y gana!

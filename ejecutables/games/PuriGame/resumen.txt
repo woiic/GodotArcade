@@ -1,0 +1,1 @@
+Un dinámico juego donde controlas a un adorable perrito que se mueve de lado a lado para recoger objetos, evitar bombas y mantener sus vidas. Cada movimiento cuenta: esquiva las bombas, acumula puntos y sobrevive todo lo que puedas. ¡Rápido, emocionante y lleno de acción!

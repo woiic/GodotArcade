@@ -1,0 +1,171 @@
+[gd_scene load_steps=17 format=3 uid="uid://bvg6ylywm40ph"]
+
+[ext_resource type="Script" path="res://scenes/MainScene.gd" id="1_67b63"]
+[ext_resource type="Texture2D" uid="uid://b20gq6upvbphf" path="res://assets/Big.png" id="2_0bwtd"]
+[ext_resource type="PackedScene" uid="uid://bkd3ks37goh5u" path="res://scenes/game_list_scene.tscn" id="2_eqp0s"]
+[ext_resource type="PackedScene" uid="uid://dha7xnhw5kleo" path="res://scenes/time_manager.tscn" id="2_hg2p2"]
+[ext_resource type="PackedScene" uid="uid://cfnbkw1ybivle" path="res://scenes/pause_menu.tscn" id="3_a3q5w"]
+[ext_resource type="PackedScene" uid="uid://b5f2nbt70fkr1" path="res://scenes/game_overlay.tscn" id="4_3gwn0"]
+[ext_resource type="PackedScene" uid="uid://bgvwewiwa5tk0" path="res://scenes/leader_boards_popup.tscn" id="4_6so2x"]
+[ext_resource type="PackedScene" uid="uid://cs87j6ygdwi5x" path="res://scenes/session_handler.tscn" id="5_rm566"]
+[ext_resource type="Material" uid="uid://p5715h8ojx3b" path="res://assets/new_shader_material.tres" id="6_3ppm1"]
+[ext_resource type="PackedScene" uid="uid://rxqn4xoiignj" path="res://scenes/leader_boards_scene.tscn" id="6_hqgwl"]
+[ext_resource type="StyleBox" uid="uid://dyco6u4al2ulf" path="res://assets/OnButtonDefault.tres" id="6_t7230"]
+[ext_resource type="StyleBox" uid="uid://bewp26fntl6yf" path="res://assets/OnButtonHovered.tres" id="7_1fa4m"]
+[ext_resource type="FontFile" uid="uid://c1aavsv5y81pt" path="res://assets/fonts/DESIGNER.otf" id="7_4n8sl"]
+[ext_resource type="PackedScene" uid="uid://d036bj4p84vn0" path="res://scenes/client.tscn" id="7_s5bk4"]
+[ext_resource type="PackedScene" uid="uid://i70sqa12i4mm" path="res://scenes/profile.tscn" id="8_an8eh"]
+[ext_resource type="PackedScene" uid="uid://bbsd5cbnxldhf" path="res://scenes/feed_back_scene.tscn" id="8_pwjkl"]
+
+[node name="MainScene" type="CanvasLayer"]
+script = ExtResource("1_67b63")
+
+[node name="BackGround" type="TextureRect" parent="."]
+offset_left = -256.0
+offset_top = -384.0
+offset_right = 2024.0
+offset_bottom = 904.0
+texture = ExtResource("2_0bwtd")
+
+[node name="TimeManager" parent="." instance=ExtResource("2_hg2p2")]
+unique_name_in_owner = true
+
+[node name="FeedBack" parent="." instance=ExtResource("8_pwjkl")]
+
+[node name="LeaderBoardsPOPUP" parent="." instance=ExtResource("4_6so2x")]
+unique_name_in_owner = true
+
+[node name="Title" type="Label" parent="."]
+self_modulate = Color(0.917647, 0.0705882, 0.0862745, 1)
+material = ExtResource("6_3ppm1")
+offset_left = 416.0
+offset_top = 136.0
+offset_right = 776.0
+offset_bottom = 208.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Title"]
+material = ExtResource("6_3ppm1")
+layout_mode = 0
+offset_left = 50.0
+offset_top = -50.0
+offset_right = 370.0
+offset_bottom = 70.0
+theme_override_fonts/normal_font = ExtResource("7_4n8sl")
+theme_override_font_sizes/normal_font_size = 46
+text = "ARCADEV"
+
+[node name="Button" type="Button" parent="Title"]
+layout_mode = 0
+offset_left = -368.0
+offset_top = 152.0
+offset_right = -112.0
+offset_bottom = 216.0
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = ExtResource("7_1fa4m")
+theme_override_styles/hover = ExtResource("7_1fa4m")
+theme_override_styles/pressed = ExtResource("7_1fa4m")
+theme_override_styles/normal = ExtResource("6_t7230")
+text = "Juegos"
+icon_alignment = 1
+
+[node name="SessionsButton" type="Button" parent="Title"]
+layout_mode = 0
+offset_left = -368.0
+offset_top = 56.0
+offset_right = -112.0
+offset_bottom = 120.0
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = ExtResource("7_1fa4m")
+theme_override_styles/hover = ExtResource("7_1fa4m")
+theme_override_styles/pressed = ExtResource("7_1fa4m")
+theme_override_styles/normal = ExtResource("6_t7230")
+text = "Iniciar Sesion"
+icon_alignment = 1
+
+[node name="LeaderBoards" type="Button" parent="Title"]
+layout_mode = 0
+offset_left = -368.0
+offset_top = 248.0
+offset_right = -112.0
+offset_bottom = 312.0
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = ExtResource("7_1fa4m")
+theme_override_styles/hover = ExtResource("7_1fa4m")
+theme_override_styles/pressed = ExtResource("7_1fa4m")
+theme_override_styles/normal = ExtResource("6_t7230")
+text = "Puntajes"
+icon_alignment = 1
+expand_icon = true
+
+[node name="CloseSession" type="Button" parent="Title"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = -392.0
+offset_top = 448.0
+offset_right = -232.0
+offset_bottom = 488.0
+theme_override_styles/focus = ExtResource("7_1fa4m")
+theme_override_styles/hover = ExtResource("7_1fa4m")
+theme_override_styles/pressed = ExtResource("7_1fa4m")
+theme_override_styles/normal = ExtResource("6_t7230")
+text = "Cerrar sesion"
+expand_icon = true
+
+[node name="client" parent="." instance=ExtResource("7_s5bk4")]
+position = Vector2(912, 584)
+
+[node name="GameListScene" parent="." instance=ExtResource("2_eqp0s")]
+metadata/_edit_lock_ = true
+
+[node name="pause_container" parent="." instance=ExtResource("3_a3q5w")]
+size_flags_horizontal = 4
+size_flags_vertical = 4
+metadata/_edit_lock_ = true
+
+[node name="GameOverlay" parent="." instance=ExtResource("4_3gwn0")]
+metadata/_edit_lock_ = true
+
+[node name="SessionHandler" parent="." instance=ExtResource("5_rm566")]
+metadata/_edit_lock_ = true
+
+[node name="LeaderBoards_scene" parent="." instance=ExtResource("6_hqgwl")]
+
+[node name="Profile" parent="." instance=ExtResource("8_an8eh")]
+unique_name_in_owner = true
+
+[node name="Debug" type="Label" parent="."]
+visible = false
+offset_left = 768.0
+offset_top = 528.0
+offset_right = 1144.0
+offset_bottom = 640.0
+clip_text = true
+
+[node name="SessionDebug" type="Label" parent="."]
+visible = false
+offset_left = 64.0
+offset_top = 576.0
+offset_right = 104.0
+offset_bottom = 599.0
+
+[node name="DebugButton" type="Button" parent="."]
+visible = false
+offset_left = 936.0
+offset_top = 424.0
+offset_right = 1032.0
+offset_bottom = 512.0
+text = "DEBUG"
+
+[connection signal="Inactivy" from="TimeManager" to="." method="_on_time_manager_inactivy"]
+[connection signal="onFeedBackSave" from="FeedBack" to="." method="_on_feed_back_on_feed_back_save"]
+[connection signal="pressed" from="Title/Button" to="." method="_btn_going_to_games"]
+[connection signal="pressed" from="Title/SessionsButton" to="." method="_on_sessions_button_pressed"]
+[connection signal="button_down" from="Title/LeaderBoards" to="." method="_on_leader_boards_button_down"]
+[connection signal="pressed" from="Title/CloseSession" to="." method="_on_close_session_pressed"]
+[connection signal="game_selected" from="GameListScene" to="." method="_on_game_list_scene_game_selected"]
+[connection signal="return_mm" from="pause_container" to="." method="_on_pause_container_return_mm"]
+[connection signal="endpoint_response" from="SessionHandler" to="." method="_on_session_handler_endpoint_response"]
+[connection signal="guest_session" from="SessionHandler" to="." method="_on_guest_session"]
+[connection signal="on_player_session" from="SessionHandler" to="." method="_on_player_session"]
+[connection signal="back_to_menu" from="LeaderBoards_scene" to="." method="_on_leader_boards_scene_back_to_menu"]
+[connection signal="pressed" from="DebugButton" to="." method="_on_debug_button_pressed"]
