@@ -4,12 +4,12 @@ from email.mime.multipart import MIMEMultipart
 
 def enviar_correo(destinatario, asunto, mensaje):
     # Configuración del servidor SMTP
-    servidor_smtp = 'smtp.gmail.com'
+    servidor_smtp = 'smtp.gmail.com' # direccion del sv de coreos de gmail
     puerto = 587  # Puerto típico para SMTP
 
     # Dirección de correo electrónico y contraseña
-    remitente = 'memoriaarcade@gmail.com' # HARDCODED
-    contraseña = 'ohts cpfc lrte dyfu'    # HARDCODED
+    remitente = 'tu_correo@gmail.com' # tu correo de GMAIL
+    contraseña = 'xxxx xxxx xxxx xxxx'    # la constraseña online de tu correo
 
     # Crear el objeto del mensaje
     msg = MIMEMultipart()
@@ -33,8 +33,8 @@ def enviar_multiples_correo(destinatarios, asunto, mensajes):
     puerto = 587  # Puerto típico para SMTP
 
     # Dirección de correo electrónico y contraseña
-    remitente = 'memoriaarcade@gmail.com' # HARDCODED
-    contraseña = 'ohts cpfc lrte dyfu'    # HARDCODED
+    remitente = 'tu_correo@gmail.com' # tu correo de GMAIL
+    contraseña = 'xxxx xxxx xxxx xxxx'    # la constraseña online de tu correo
 
     # Iniciar conexión con el servidor SMTP
     with smtplib.SMTP(servidor_smtp, puerto) as servidor:
@@ -56,13 +56,3 @@ def enviar_multiples_correo(destinatarios, asunto, mensajes):
             except:
                 print(f"Error con destinatario:{destinatario}, y mensaje {texto}")
 
-
-
-# Llamar a la función para enviar el correo
-#destinatario = 'lh-swysen@hotmail.com'
-#enviar_correo(destinatario, asunto, mensaje)
-
-#destinatarios = ['jorgesossar@gmail.com','jorgesossar@gmail.com','lh-swysen@hotmail.com','loicswisen@gmail.com']
-#asunto = "prueba de correos multiples"
-#mensajes = ["mensaje nro1", "mensaje nro2", "mensaje nro3", "mensaje nro4"]
-#enviar_multiples_correo(destinatarios, asunto, mensajes)

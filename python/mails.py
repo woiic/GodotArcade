@@ -8,8 +8,8 @@ def enviar_correo(destinatario, asunto, mensaje):
     puerto = 587  # Puerto típico para SMTP
 
     # Dirección de correo electrónico y contraseña
-    remitente = 'memoriaarcade@gmail.com' # HARDCODED
-    contraseña = 'ohts cpfc lrte dyfu'    # HARDCODED
+    remitente = 'tu_correo@gmail.com' # tiene que ser de gmail
+    contraseña = 'xxxx xxxx xxxx xxxx'    # tu contraseña online de gmail
 
     # Crear el objeto del mensaje
     msg = MIMEMultipart()
@@ -29,12 +29,12 @@ def enviar_correo(destinatario, asunto, mensaje):
 
 def enviar_multiples_correo(destinatarios, asunto, mensajes):
     # Configuración del servidor SMTP
-    servidor_smtp = 'smtp.gmail.com'
+    servidor_smtp = 'smtp.gmail.com' # direccion al sv correos de gmail
     puerto = 587  # Puerto típico para SMTP
 
     # Dirección de correo electrónico y contraseña
-    remitente = 'memoriaarcade@gmail.com' # HARDCODED
-    contraseña = 'ohts cpfc lrte dyfu'    # HARDCODED
+    remitente = 'tu_correo@gmail.com' # tiene que ser de gmail
+    contraseña = 'xxxx xxxx xxxx xxxx'    # tu contraseña online de gmail
 
     # Iniciar conexión con el servidor SMTP
     with smtplib.SMTP(servidor_smtp, puerto) as servidor:
