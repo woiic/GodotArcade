@@ -60,11 +60,4 @@ def enviar_multiples_correo(destinatarios, asunto, mensajes):
 
 #asunto = "test"
 #mensaje = "test mensaje"
-# Llamar a la función para enviar el correo
-#destinatario = 'lh-swysen@hotmail.com'
-#enviar_correo(destinatario, asunto, mensaje)
-
-#destinatarios = ['jorgesossar@gmail.com','jorgesossar@gmail.com','lh-swysen@hotmail.com','loicswisen@gmail.com']
-#asunto = "prueba de correos multiples"
-#mensajes = ["mensaje nro1", "mensaje nro2", "mensaje nro3", "mensaje nro4"]
 #enviar_multiples_correo(destinatarios, asunto, mensajes)
